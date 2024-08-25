@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="mt-3 p-4 px-4">
+    <h5 class="title">Ver Histórico</h5>
+    <hr class="hr">
+<div class="table-wrapper">
+  @if (service.historyStocks?.length > 0) {
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nº</th>
+        <th scope="col">Nome da Ação</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Comprado/Vendido</th>
+        <th scope="col">Data/Hora</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (stock of service.historyStocks; track $index) {
+        <tr>
+        <td style="border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;">{{$index +1}}</td>
+          <td class="my-auto" >
+          <div class="d-flex">
+           <span>{{stock.stock}}</span>
+          </div>
+            
+          </td>
+          <td>
+           <div class="table-col">
+            <p>R${{stock.amount}}</p>
+           </div>
+          </td>
+          <td>
+            <div class="table-col">
+              <p class="text-uppercase" [ngClass]="stock.stockStatus == 'comprado' ? 'text-success'  : 'text-danger'"
+              >{{stock.stockStatus}}</p>
+             </div>
+          </td> 
+          <td style="border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px; width: 150px;">
+             <div class="table-col">
+              <p>{{stock.timestamp | date: 'dd/MM/yyyy, HH:mm'}}</p>
+             </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
+</div>
+   </div>
+</div>

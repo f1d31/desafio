@@ -1,0 +1,27 @@
+.detail-card{
+  background-color: #343434;
+  padding: 15px;
+  border-radius: 30px;
+  position: relative;
+  height: auto;
+  .bottom-c{
+    position: static;
+    width: 100%;
+    bottom: 20px;
+    margin-top: 18px;
+  }
+}
+
+.modal-body {
+  background-color: #343434;
+}
+
+.market-text {
+  font-weight: 700;
+}
+
+.progress{
+  background-color: transparent;
+  --bs-progress-bar-bg: #EE7502;
+  height: 3px;
+}

@@ -1,0 +1,96 @@
+<div class="modal-body">
+  <div class="detail-card">
+    <div class="text-end">
+      <i class="fa-solid fa-xmark pointer text-white" 
+      (click)="activeModal.dismiss('Cross click')" ></i>
+    </div>
+    <h5 class="title">Mais informações de -<span class="ps-2 text-custom-primary" >{{stockDetails?.shortName}}</span></h5>
+ <hr class="hr">
+    <div class="my-3 d-flex justify-content-center">
+  <img [src]="stockDetails?.logourl">
+ </div>
+ <p class="text-center text-success mb-2 market-text">
+  Mercado está aberto
+ </p>
+
+ <div class="my-3">
+  <div class="row">
+    <div class="col-4  my-auto">
+      <p class="text-white   mb-0">Maior preço</p>
+    </div>
+   <div class="col-6  my-auto">
+    <div class="progress" role="progressbar" 
+    aria-label="Basic example" aria-valuenow="0" 
+    aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 100%"></div>
+    </div>
+   </div>
+   <div class="col-2 my-auto">
+    <p class="mx-2 text-white  mb-0">{{stockDetails?.regularMarketDayHigh}}</p>
+    </div>
+  
+  </div>
+  <div class="row my-2">
+    <div class="col-4  my-auto">
+      <p class="text-white mb-0">Menor preço</p>
+    </div>
+   <div class="col-6  my-auto">
+    <div class="progress" role="progressbar" 
+    aria-label="Basic example" aria-valuenow="0" 
+    aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 100%"></div>
+    </div>
+   </div>
+   <div class="col-2 my-auto">
+    <p class="mx-2 text-white  mb-0">{{stockDetails?.regularMarketDayLow}}</p>
+    </div>
+  
+  </div>
+  <div class="row">
+    <div class="col-4  my-auto">
+      <p class="text-white  mb-0">Preco aberto</p>
+    </div>
+   <div class="col-6  my-auto">
+    <div class="progress" role="progressbar" 
+    aria-label="Basic example" aria-valuenow="0" 
+    aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 100%"></div>
+    </div>
+   </div>
+   <div class="col-2 my-auto">
+    <p class="mx-2 text-white  mb-0">{{stockDetails?.regularMarketOpen}}</p>
+    </div>
+  
+  </div>
+ </div>
+
+ <h5 class="title">Sobre a Empresa</h5>
+ <hr class="hr">
+
+ <div class="my-3">
+ <!--  <p class="text-white">Incio de IPO: {{stockDetails?.regularMarketTime | date: 'mediumDate'}}</p> -->
+  <p class="text-white">Indústria: {{stockDetails?.summaryProfile.industry}}</p>
+  <p class="text-white">Website: {{stockDetails?.summaryProfile.website}}</p>
+ </div>
+ <div style="display: block;">
+  <canvas id="stockChart"></canvas>
+</div>
+ <div class="d-flex bottom-c">
+  <input type="number" class="form-control"
+  [(ngModel)]="amount">
+  <button class="btn btn-success mx-2" (click)="stockP('comprado')">
+    Comprar
+  </button>
+  <button class="btn btn-danger" (click)="stockP('vendido')">
+    Vender
+  </button>
+ </div>
+
+  </div>
+</div>
+
+
+<ng-template #standardTpl2> Ação vendida com sucesso</ng-template>
+
+<ng-template #standardTpl> Ação comprada com sucesso</ng-template>
+<app-toasts aria-live="polite" aria-atomic="true"></app-toasts>

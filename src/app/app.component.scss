@@ -1,0 +1,85 @@
+header{
+  border-bottom: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  padding: 46px 0px 34px 0px;
+  margin: 0px 24px 0px 24px;
+  .l-listing{
+    a{
+      cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0px 30px 42px 30px;
+    position: relative;
+    }
+  }
+}
+.active{
+  border-bottom: 2px solid #F27400;
+}
+
+.header-menus {
+  padding-top: 8px;
+}
+
+.active:after {
+  color: #F27400;
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: url('/assets/fill.png'); /* Caminho relativo ao root da aplicação */
+}
+.fa-circle{
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  font-size: 8px;
+}
+
+@media (max-width:768px) {
+  header{
+    // padding: 10px;
+    border-bottom: 1px solid gray;
+    padding: 20px 0px 14px 0px;
+    .logo{
+      width: 100px;
+      height: 22px;
+    }
+     .l-listing{
+       a{
+         cursor: pointer;
+         color: white;
+         padding: 21px;
+         text-decoration: none;
+       }
+     }
+   }
+
+   .header-menus {
+    padding-top: 0px;
+  }
+
+
+
+
+}
+
+@media (max-width:576px) {
+
+  header{
+
+    .logo{
+      width: 60px;
+      height: 13px;
+      margin-top: 7px;
+    }
+     .l-listing{
+       a{
+        padding: 0px 0px 21px 0px;
+       }
+     }
+   }
+
+}

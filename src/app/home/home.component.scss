@@ -1,0 +1,111 @@
+
+.banner-card{
+  position: relative;
+  background-color: #343434;
+  height: 280px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  .content{
+    padding: 25px;
+    font-weight: 700;
+    p{
+      color: #5c5c5c;
+    }
+  }
+ 
+  .shape{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+}
+
+.table-wrapper{
+  height: 450px;
+  overflow: auto;
+  .table{
+    background-color: transparent;
+   
+    tbody{
+      tr,td{
+        background-color: transparent;
+        color: white;
+        border-bottom: 0px;
+      }
+      tr:hover{
+        background-color: #343434;
+      }
+    }
+
+  }
+  .table-col{
+    span{
+      font-size: 12px;
+      color: #5c5c5c;
+    }
+    p{
+      font-size: 16px;
+      color: white;
+    }
+  }
+}
+
+.detail-card{
+  background-color: #343434;
+  padding: 15px;
+  border-radius: 30px;
+  position: relative;
+  height: 100vh;
+  .bottom-c{
+    position: absolute;
+    width: 90%;
+    bottom: 20px;
+  }
+}
+
+.market-text {
+  font-weight: 700;
+}
+
+.progress{
+  background-color: transparent;
+  --bs-progress-bar-bg: #EE7502;
+  height: 3px;
+}
+.hidePanel{
+  display: none;
+}
+.showPanel{
+  display: block;
+}
+
+@media (min-width: 1537px) {
+
+  .detail-card{
+    background-color: #343434;
+    padding: 15px;
+    border-radius: 30px;
+    position: relative;
+    height: 80vh;
+  }
+
+}
+
+@media (max-width:768px) {
+  .banner-card{
+ .shape{
+  width: 150px;
+ }
+  }
+  .showPanel{
+    position: absolute;
+    left: 0px;
+  }
+}
+
+.flexing{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
